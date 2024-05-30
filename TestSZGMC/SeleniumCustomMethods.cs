@@ -107,7 +107,8 @@ namespace TestSZGMC
         public static void ScreenShot(IWebDriver driver)
         {
            ITakesScreenshot screenshot = (ITakesScreenshot)driver;
-            screenshot.GetScreenshot().SaveAsFile();
+            screenshot.GetScreenshot().SaveAsFile("Test.png");
+            driver.Quit();
         }
 
 
