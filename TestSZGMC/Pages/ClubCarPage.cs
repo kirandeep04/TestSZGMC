@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace TestSZGMC.Pages
 {
-   public class ClubCarPage
+    public class ClubCarPage
     {
         private readonly IWebDriver driver;
 
@@ -23,14 +23,13 @@ namespace TestSZGMC.Pages
         IWebElement date => driver.FindElement(By.Id("txtProposedVisitDate"));
         IWebElement Size => driver.FindElement(By.Id("txtGroupsize"));
         IWebElement Chooselanguage => driver.FindElement(By.Id("ddlLanguage"));
-        // IWebElement captcha => driver.FindElement(By.Id("txtCaptcha"));
+        IWebElement captcha => driver.FindElement(By.Id("txtCaptcha"));
         IWebElement Submit => driver.FindElement(By.Id("btnPayment"));
 
 
         public void FillBookingForm(string name, string phonenumber, string Nationality, string email, string groupSize, string language)
         {
             Name.ClickElement(name);
-
             PhoneNumber.ClickElement(phonenumber);
             nationality.Click();
             SeleniumCustomMethods.SZGMCDropDown(driver, Nationality);
@@ -47,13 +46,9 @@ namespace TestSZGMC.Pages
             //driver.ExecuteJavaScript(js2);
             string js2 = "$('#ddlProposedTime').val($('#ddlProposedTime option:eq(2)').val())";
             driver.ExecuteJavaScript(js2);
-
             Size.ClickElement(groupSize);
-
             SeleniumCustomMethods.SelectDropDownByText(Chooselanguage, language);
-
             //captcha.EnterText(captcha.Text);
-
             Submit.Click();
         }
     }

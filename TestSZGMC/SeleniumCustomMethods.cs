@@ -45,6 +45,12 @@ namespace TestSZGMC
                 selectElement.SelectByIndex(index);
             }
         }
+        public static void WaitForPageToLoad(IWebDriver driver, int timeoutInSeconds)
+        {
+            var wait = new WebDriverWait(driver, TimeSpan.FromSeconds(timeoutInSeconds));
+            wait.Until(driver => ((IJavaScriptExecutor)driver).ExecuteScript("return document.readyState").Equals("complete"));
+        }
+       
 
         public static void VerifyDropdownOptionsCount(this IWebElement locator, int expectedCount)
         {
@@ -104,11 +110,11 @@ namespace TestSZGMC
             jsExecutor.ExecuteScript(js);
         }
 
-        public static void ScreenShot(IWebDriver driver)
+        public static void TakeScreenshotAndSave(this IWebDriver driver, string fileName)
         {
-           ITakesScreenshot screenshot = (ITakesScreenshot)driver;
-            screenshot.GetScreenshot().SaveAsFile("Test.png");
-            driver.Quit();
+            ITakesScreenshot screenshotDriver = (ITakesScreenshot)driver;
+            Screenshot screenshot = screenshotDriver.GetScreenshot();
+            screenshot.SaveAsFile(fileName);
         }
 
 

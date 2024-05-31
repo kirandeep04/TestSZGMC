@@ -102,3 +102,4 @@ C:\Users\Dell\OneDrive\Documents\Selenium Testing\TestSZGMC\TestSZGMC\obj\Debug\
 C:\Users\Dell\OneDrive\Documents\Selenium Testing\TestSZGMC\TestSZGMC\obj\Debug\net8.0\TestSZGMC.pdb
 C:\Users\Dell\OneDrive\Documents\Selenium Testing\TestSZGMC\TestSZGMC\obj\Debug\net8.0\TestSZGMC.genruntimeconfig.cache
 C:\Users\Dell\OneDrive\Documents\Selenium Testing\TestSZGMC\TestSZGMC\obj\Debug\net8.0\ref\TestSZGMC.dll
+C:\Users\Dell\OneDrive\Documents\Selenium Testing\TestSZGMC\TestSZGMC\obj\Debug\net8.0\TestSZGMC.sourcelink.json
